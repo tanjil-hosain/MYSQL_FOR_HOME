@@ -26,9 +26,12 @@ $db = mysqli_connect("localhost", "root", "", "crud");
                 <td><?php  echo $id;?></td>
                 <td><?php  echo $name;?></td>
                 <td><?php  echo $price;?></td>
+                <td><button> <a href="delete.php?delete=<?php echo $id ?>">Delete</a></button></td>
             </tr>
             <?php } ?>
         </tbody>
     </table>
+<br><br><br>
+    <button><a href="insert.php">ADD Product</a></button>
 </body>
 </html>
