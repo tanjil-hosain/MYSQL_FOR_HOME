@@ -6,7 +6,7 @@ if(isset($_POST['insert'])){
 
     $sql = "INSERT INTO products (name, price) VALUES('$name', '$price')";
     if(mysqli_query($db, $sql)){
-        header("location:insert.php");
+        header("location:view.php");
         exit();
         
     }
