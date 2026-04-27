@@ -1,3 +1,17 @@
+<?php
+$db = mysqli_connect("localhost", "root", "", "crud");
+if(isset($_POST['insert'])){
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+
+    $sql = "INSERT INTO products (name, price) VALUES('$name', '$price')";
+    if(mysqli_query($db, $sql)){
+        header("location:insert.php");
+        exit();
+        
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
