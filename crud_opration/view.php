@@ -9,12 +9,13 @@ $db = mysqli_connect("localhost", "root", "", "crud");
     <title>Document</title>
 </head>
 <body>
-    <table border="3">
+    <table border="3" style="border-collapse: collapse;">
         <thead>
             <tr>
                 <td>ID</td>
                 <td>Name</td>
                 <td>Price</td>
+                <td>Action</td>
             </tr>
         </thead>
         <tbody>
@@ -26,7 +27,8 @@ $db = mysqli_connect("localhost", "root", "", "crud");
                 <td><?php  echo $id;?></td>
                 <td><?php  echo $name;?></td>
                 <td><?php  echo $price;?></td>
-                <td><button> <a href="delete.php?delete=<?php echo $id ?>">Delete</a></button></td>
+                <td><button> <a href="delete.php?delete=<?php echo $id ?>">Delete</a></button>
+                <button><a href="update.php?id= <?php echo $id ?>">Update</a></button> </td>
             </tr>
             <?php } ?>
         </tbody>
