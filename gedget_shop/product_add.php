@@ -13,7 +13,7 @@ if(isset($_POST['product'])){
     $sql = "INSERT INTO products (name, price, brand_id, product_img) VALUES('$name', '$price', '$brand_id', '$img')";
 
     if(mysqli_query($database, $sql)){
-        echo "success";
+        header("location: view.php");
         exit();
     }
 }
