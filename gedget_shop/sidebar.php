@@ -47,7 +47,7 @@
         </div>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" href="managment.php">ADMIN DASHBORD</a>
+                <a class="nav-link active" href="admin.php">ADMIN DASHBORD</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="brand_add.php">BRAND ADD</a>
