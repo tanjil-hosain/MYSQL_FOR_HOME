@@ -1,5 +1,6 @@
 <?php
 $database = mysqli_connect("localhost", "root", "", "gedget_shop");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +23,7 @@ $database = mysqli_connect("localhost", "root", "", "gedget_shop");
                 <div class="card shadow p-4">
                     <h2 class="text-center mb-4">PRODUCT ADD</h2>
 
-                    <form action="" method="POST">
+                    <form action="" method="POST" enctype="multipart/form-data">
 
                         <div class="mb-3">
                             <label class="form-label">Name</label>
@@ -48,7 +49,7 @@ $database = mysqli_connect("localhost", "root", "", "gedget_shop");
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Product</label>
-                            <input type="text" name="price" class="form-control">
+                            <input type="file" name="img" class="form-control">
                         </div>
 
                         <button type="submit" name="brand" class="btn btn-primary w-100">
