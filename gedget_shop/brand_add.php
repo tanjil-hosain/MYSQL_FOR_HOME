@@ -7,7 +7,7 @@ if(isset($_POST['brand'])){
     $sql = "INSERT INTO brands (name, contact) VALUES('$name', '$contact')";
 
     if(mysqli_query($database, $sql)){
-        header("location: product_add.php");
+        header("location:product_add.php");
         exit();
     }
 }

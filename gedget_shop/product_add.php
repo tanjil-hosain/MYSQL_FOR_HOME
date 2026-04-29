@@ -34,7 +34,7 @@
                     </div>
                                         <div class="mb-3">
                         <label class="form-label">Product</label>
-                        <input type="text" name="price" class="form-control" placeholder="Contact">
+                        <input type="text" name="price" class="form-control" >
                     </div>
 
                     <button type="submit" name="brand" class="btn btn-primary w-100">
