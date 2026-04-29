@@ -26,11 +26,11 @@
                     
                     <div class="mb-3">
                         <label class="form-label">Price</label>
-                        <input type="text" name="price" class="form-control" placeholder="Contact">
+                        <input type="text" name="price" class="form-control" placeholder="Price">
                     </div>
                                         <div class="mb-3">
                         <label class="form-label">Brand_id</label>
-                        <input type="text" name="brand_id" class="form-control" placeholder="Contact">
+                        <input type="text" name="brand_id" class="form-control" placeholder="Brand_id">
                     </div>
                                         <div class="mb-3">
                         <label class="form-label">Product</label>
