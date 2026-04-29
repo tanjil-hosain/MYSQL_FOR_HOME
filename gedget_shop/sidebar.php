@@ -47,16 +47,16 @@
         </div>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" href="dashboard.php">Dashboard</a>
+                <a class="nav-link active" href="managment.php">ADMIN DASHBORD</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="view.php">Products</a>
+                <a class="nav-link" href="brand_add.php">BRAND ADD</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="categories.php">Categories</a>
+                <a class="nav-link" href="product_add.php">PRODUCT ADD</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="orders.php">Orders</a>
+                <a class="nav-link" href="view.php">AVAILABLE PRODUCT</a>
             </li>
         </ul>
     </div>
