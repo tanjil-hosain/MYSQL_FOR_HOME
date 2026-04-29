@@ -2,11 +2,9 @@
 $database = mysqli_connect("localhost", "root", "", "gedget_shop");
 
 $id = $_GET['id'];
-$sql = "SELECT * FROM products";
-if(mysqli_query($database, $sql)){
-    header("location:details.php");
 
-}
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +32,7 @@ if(mysqli_query($database, $sql)){
 
             <div class="row align-items-center">
                 <?php 
-                $singel_view = $database->query("SELECT *FROM products");
+                $singel_view = $database->query("SELECT *FROM products WHERE id= '$id'");
                 while(list($id, $name, $price, $brand_id, $img)= $singel_view->fetch_row()){
 
                
