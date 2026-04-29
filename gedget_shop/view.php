@@ -1,4 +1,5 @@
 <?php
+include_once("sidebar.php");
 $database = mysqli_connect("localhost", "root", "", "gedget_shop");
 ?>
 <!DOCTYPE html>
@@ -10,10 +11,15 @@ $database = mysqli_connect("localhost", "root", "", "gedget_shop");
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <style>
+    .container{
+        margin-left: 250px;
+    }
+  </style>
 </head>
 <body class="bg-light">
 
-<div class="container mt-5">
+<div class="container  mt-5">
   <div class="card shadow-lg border-0 rounded-4">
     
     <div class="card-header bg-primary text-white text-center">

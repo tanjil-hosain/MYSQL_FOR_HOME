@@ -1,4 +1,5 @@
 <?php
+include_once("sidebar.php");
 $database = mysqli_connect("localhost", "root", "", "gedget_shop");
 
 if(isset($_POST['brand'])){
