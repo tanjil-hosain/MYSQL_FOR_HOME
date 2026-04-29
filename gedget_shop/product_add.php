@@ -1,6 +1,23 @@
 <?php
 $database = mysqli_connect("localhost", "root", "", "gedget_shop");
 
+if(isset($_POST['product'])){
+    $name= $_POST['name'];
+    $price = $_POST['price'];
+    $brand_id = $_POST['brand_id'];
+    $img = $_FILES['img']['name'];
+    $tmp = $_FILES['img']['tmp_name'];
+     
+    move_uploaded_file($tmp, "uploads/".$img);
+
+    $sql = "INSERT INTO products (name, price, brand_id, product_img) VALUES('$name', '$price', '$brand_id', '$img')";
+
+    if(mysqli_query($database, $sql)){
+        echo "success";
+        exit();
+    }
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,8 +69,8 @@ $database = mysqli_connect("localhost", "root", "", "gedget_shop");
                             <input type="file" name="img" class="form-control">
                         </div>
 
-                        <button type="submit" name="brand" class="btn btn-primary w-100">
-                            Submit
+                        <button type="submit" name="product" class="btn btn-primary w-100">
+                            ADD Product
                         </button>
 
                     </form>
