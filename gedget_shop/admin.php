@@ -62,10 +62,9 @@ $database = mysqli_connect("localhost", "root", "", "gedget_shop");
               </td>
 
               <td>
-                <a href="details.php?id=<?php echo $id; ?>" 
-                   class="btn btn-primary btn-sm">
-                   View Details
-                </a>
+                <button><a href="delete.php?delete=<?php echo $id ?>">DELETE</a></button>
+                <button><a href="update.php?id=<?php echo $id ?>">UPDATE</a></button>
+
               </td>
             </tr>
 
