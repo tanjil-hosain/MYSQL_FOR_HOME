@@ -58,7 +58,7 @@ if(isset($_POST['product'])){
                                 <?php 
                                 $brand_data = $database->query("SELECT * FROM brands");
                                 while(list($id, $name) = $brand_data->fetch_row()){
-                                    echo"<option value = '$id'> $name</optiom>";
+                                    echo"<option value = '$id'> $name</option>";
                                     
                                 }
                                  ?>

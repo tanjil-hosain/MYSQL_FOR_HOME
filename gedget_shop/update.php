@@ -1,3 +1,26 @@
+<?php
+include_once("sidebar.php");
+$database = mysqli_connect("localhost", "root", "", "gedget_shop");
+
+$id = $_GET['id'];
+$data = mysqli_query($database, "SELECT * FROM products WHERE id='$id' ");
+$row = mysqli_fetch_assoc($data);
+
+if(isset($_POST['update'])){
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $brand_id = $_POST['brand_id'];
+    $img = $_FILES['img']['name'];
+    $tmp = $_FILES['img']['tmp_name'];
+
+      move_uploaded_file($tmp, "uploads/".$img);
+      $sql = "UPDATE products SET name = '$name', price='$price', brand_id= '$brand_id', product_img = '$img'";
+      if(mysqli_query($database, $sql)){
+        header("location:admin.php");
+      }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,20 +46,20 @@
 
                         <div class="mb-3">
                             <label class="form-label">Name</label>
-                            <input type="text" name="name" class="form-control" placeholder="Brand Name">
+                            <input type="text" name="name" class="form-control" value="<?php echo $row['name']; ?>">
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label">Price</label>
-                            <input type="text" name="price" class="form-control" placeholder="Price">
+                            <input type="text" name="price" class="form-control" value="<?php echo $row['price']; ?>">
                         </div>
                         <div class="mb-3">
                             <label class="form-label" >Brand_id</label>
-                            <select name="brand_id" id="">
+                            <select name="brand_id" value="<?php echo $row['brand_id'];?>">
                                 <?php 
                                 $brand_data = $database->query("SELECT * FROM brands");
                                 while(list($id, $name) = $brand_data->fetch_row()){
-                                    echo"<option value = '$id'> $name</optiom>";
+                                    echo"<option value = '$id'> $name</option>";
                                     
                                 }
                                  ?>
@@ -45,11 +68,11 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Product</label>
-                            <input type="file" name="img" class="form-control">
+                            <input type="file" name="img" class="form-control" value="<?php echo $row['img']; ?>">
                         </div>
 
-                        <button type="submit" name="product" class="btn btn-primary w-100">
-                            ADD Product
+                        <button type="submit" name="update" class="btn btn-primary w-100">
+                           Save & Change
                         </button>
 
                     </form>
