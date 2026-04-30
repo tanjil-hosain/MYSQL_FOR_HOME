@@ -3,7 +3,7 @@ include_once("sidebar.php");
 $database = mysqli_connect("localhost", "root", "", "gedget_shop");
 
 $id = $_GET['id'];
-$data = mysqli_query($database, "SELECT * FROM products WHERE id='$id' ");
+$data = mysqli_query($database, "SELECT * FROM products WHERE id ='$id'");
 $row = mysqli_fetch_assoc($data);
 
 if(isset($_POST['update'])){
@@ -14,7 +14,7 @@ if(isset($_POST['update'])){
     $tmp = $_FILES['img']['tmp_name'];
 
       move_uploaded_file($tmp, "uploads/".$img);
-      $sql = "UPDATE products SET name = '$name', price='$price', brand_id= '$brand_id', product_img = '$img'";
+      $sql = "UPDATE products SET name = '$name', price='$price', brand_id= '$brand_id', product_img = '$img' WHERE id ='$id'";
       if(mysqli_query($database, $sql)){
         header("location:admin.php");
       }
