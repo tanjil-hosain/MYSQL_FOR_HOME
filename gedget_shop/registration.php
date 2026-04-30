@@ -1,15 +1,18 @@
 <?php
 $database = mysqli_connect("localhost", "root", "", "gedget_shop");
 
-if(isset($_POST['brand'])){
+if(isset($_POST['registration'])){
     $name = $_POST['name'];
-    $contact = $_POST['contact'];
-    $sql = "INSERT INTO brands (name, contact) VALUES('$name', '$contact')";
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $mobile = $_POST['mobile'];
+
+    $sql = "INSERT INTO users (name, email, password, mobile) VALUES('$name', '$email','$password','$mobile')";
 
     if(mysqli_query($database, $sql)){
-        header("location:product_add.php");
-        exit();
+        header("location:login.php");
     }
+
 }
 ?>
 <!DOCTYPE html>
@@ -29,22 +32,31 @@ if(isset($_POST['brand'])){
         <div class="col-md-6">
 
             <div class="card shadow p-4">
-                <h2 class="text-center mb-4">BRAND ADD</h2>
+                <h2 class="text-center mb-4">Registration</h2>
 
                 <form action="" method="POST">
 
                     <div class="mb-3">
-                        <label class="form-label">Brand Name</label>
-                        <input type="text" name="name" class="form-control" placeholder="Brand Name">
+                        <label class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control" placeholder="Name">
                     </div>
                     
                     <div class="mb-3">
-                        <label class="form-label">Contact</label>
-                        <input type="text" name="contact" class="form-control" placeholder="Contact">
+                        <label class="form-label">Email</label>
+                        <input type="text" name="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input type="password" name="password" class="form-control" placeholder="Password">
                     </div>
 
-                    <button type="submit" name="brand" class="btn btn-primary w-100">
-                        Submit
+                        <div class="mb-3">
+                        <label class="form-label">Mobile</label>
+                        <input type="text" name="mobile" class="form-control" placeholder="Mobile">
+                    </div>
+
+                    <button type="submit" name="registration" class="btn btn-primary w-100">
+                        Registration
                     </button>
 
                 </form>

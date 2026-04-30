@@ -58,6 +58,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="view.php">AVAILABLE PRODUCT</a>
             </li>
+                        <li class="nav-item">
+                <a class="nav-link" href="registration.php">REGISTRATION</a>
+            </li>
         </ul>
     </div>
 
