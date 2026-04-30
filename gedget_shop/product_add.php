@@ -45,7 +45,7 @@ if(isset($_POST['product'])){
 
                         <div class="mb-3">
                             <label class="form-label">Name</label>
-                            <input type="text" name="name" class="form-control" placeholder="Brand Name">
+                            <input type="text" name="name" class="form-control" placeholder=" Name">
                         </div>
 
                         <div class="mb-3">

@@ -61,6 +61,11 @@
                         <li class="nav-item">
                 <a class="nav-link" href="registration.php">REGISTRATION</a>
             </li>
+
+            </li>
+                <li class="nav-item">
+                <a class="nav-link" href="logout.php">Log Out</a>
+            </li>
         </ul>
     </div>
 

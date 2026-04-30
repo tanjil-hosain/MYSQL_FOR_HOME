@@ -1,12 +1,16 @@
 <?php
+session_start();
+
 $database = mysqli_connect("localhost", "root", "", "gedget_shop");
 if(isset($_POST['login'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
+ 
 
     $sql = "SELECT * FROM users";
 
     if(mysqli_query($database, $sql)){
+           $_SESSION['email']= $email;
         header("location:view.php");
     }
 }
